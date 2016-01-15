@@ -19,7 +19,6 @@ class UsersTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -35,6 +34,12 @@ class UsersTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = users[indexPath.row]
+        getUserDetail(user)
+    }
+    
+    // MARK: - Call Ws
     func getUsers() {
         if utilNetwork.isNetworkAvailable() {
             utilViewController.showActivityIndicator("Searching...")
@@ -50,6 +55,23 @@ class UsersTableViewController: UITableViewController {
             }
         } else {
             utilViewController.showMessage(self, message: "Network not available :(")
+        }
+    }
+    
+    func getUserDetail(user: User) {
+        if utilNetwork.isNetworkAvailable() {
+            utilViewController.showActivityIndicator("Searching...")
+            
+            RestClient.getUserDetail(user.id) { result in
+                self.utilViewController.hideActivityIndicator()
+                if result.result.isFailure {
+                    self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
+                } else {
+                    let screenDetail = FactoryStoryboard.storyboardHome().instantiateViewControllerWithIdentifier("userDetailViewController") as? UserDetailViewController
+                    screenDetail?.user = result.result.value!.user
+                    self.navigationController?.pushViewController(screenDetail!, animated: true)
+                }
+            }
         }
     }
 

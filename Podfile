@@ -8,6 +8,8 @@ target 'vivira_health_ios' do
     pod 'OHHTTPStubs/Swift'
     pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
     pod 'SwiftLoader'
+    pod 'KFSwiftImageLoader'
+
 end
 
 target 'vivira_health_iosTests' do

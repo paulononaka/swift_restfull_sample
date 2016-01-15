@@ -166,6 +166,13 @@
                             <constraint firstItem="4Ly-Jg-U9s" firstAttribute="leading" secondItem="Gyw-hm-oFx" secondAttribute="leading" constant="8" id="zlD-NC-hGH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonEdit" destination="QNy-wZ-wPW" id="X6n-t7-GhK"/>
+                        <outlet property="desc" destination="f1q-XN-O6s" id="XlI-wC-VCg"/>
+                        <outlet property="email" destination="ksd-N6-xXq" id="ByQ-Zo-tnq"/>
+                        <outlet property="name" destination="4Ly-Jg-U9s" id="ggr-n2-qdj"/>
+                        <outlet property="photo" destination="QeH-11-ELT" id="b7E-AG-lGl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7SV-OX-5A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Edit" id="QNy-wZ-wPW"/>
