@@ -1,10 +1,15 @@
 import UIKit
 
+protocol CellTextTableViewCellDelegate{
+    func CellTextTableViewCellDesc(desc: String)
+}
+
 class CellTextTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var textViewDesc: UITextView!
-    
+    var delegate: CellTextTableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -15,6 +20,23 @@ class CellTextTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+         self.textViewDesc?.inputAccessoryView = UtilKeyBoard.viewButtonControlWithConfirmTarget(self, methodConfirm: "keyBoardConfirm", titleConfirm: "Confirm", targetCancel: self, methodCancel: "keyBoardCancel", titleCancel: "Cancel", targetHideKeyboard: self, methodHideKeyboard: "turnOffField")
+    }
+    
+    func keyBoardConfirm(){
+        turnOffField()
+        let text = self.textViewDesc.text
+        delegate?.CellTextTableViewCellDesc(text)
+    }
+    
+    func keyBoardCancel(){
+        turnOffField()
+        let text = self.textViewDesc.text
+        delegate?.CellTextTableViewCellDesc(text)
+    }
+    
+    func turnOffField(){
+        self.textViewDesc?.resignFirstResponder()
     }
 
 }

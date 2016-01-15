@@ -19,6 +19,7 @@ class UsersTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -72,6 +73,8 @@ class UsersTableViewController: UITableViewController {
                     self.navigationController?.pushViewController(screenDetail!, animated: true)
                 }
             }
+        } else {
+            utilViewController.showMessage(self, message: "Network not available :(")
         }
     }
 

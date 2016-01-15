@@ -284,8 +284,16 @@
                             <outlet property="delegate" destination="Qdn-ko-0Lj" id="YuN-VN-aV4"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="buttonSave" destination="XZR-pQ-N6W" id="Eha-IR-7XC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yI-or-4Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Save" id="XZR-pQ-N6W">
+                    <connections>
+                        <action selector="touchButtonAdd:" destination="Qdn-ko-0Lj" id="mXW-cg-03w"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="715" y="-189"/>
         </scene>

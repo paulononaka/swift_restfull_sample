@@ -30,5 +30,11 @@ class UtilViewController: NSObject {
         alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
         viewController.presentViewController(alert, animated: true){}
     }
+    
+    func showMessage(viewController: UIViewController, message: String, okHandler:() -> Void) {
+        let alert = UIAlertController(title: "Vivira", message: "\(message)", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in okHandler() })
+        viewController.presentViewController(alert, animated: true){}
+    }
 
 }

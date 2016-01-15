@@ -1,87 +1,120 @@
 import UIKit
 
-class UserAddTableViewController: UITableViewController {
+class UserAddTableViewController: UITableViewController, CellTextTableViewCellDelegate, CellInfoTableViewCellDelegate {
+    
+    var user = User()
+    var utilNetwork = UtilNetwork.sharedInstance
+    var utilViewController = UtilViewController.sharedInstance
+    @IBOutlet var buttonSave: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        title = "New user"
+         self.navigationItem.rightBarButtonItem = buttonSave
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
-
-    /*
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch(indexPath.row){
+        case 0:
+            return 44
+        case 1:
+            return 44
+        default:
+            return 194
+        }
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        switch(indexPath.row){
+        case 0:
+            return cellName(tableView, indexPath: indexPath)
+        case 1:
+            return cellEmail(tableView, indexPath: indexPath)
+        default:
+            return cellDesc(tableView, indexPath: indexPath)
+        }
+    }
+    
+    func cellName(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellInfoTableViewCell", forIndexPath: indexPath) as! CellInfoTableViewCell
+        cell.labelTitle.text = "Name"
+        cell.textFiel.text = user.name
+        cell.nameField = "name"
+        cell.delegate = self
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func cellEmail(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellInfoTableViewCell", forIndexPath: indexPath) as! CellInfoTableViewCell
+        cell.labelTitle.text = "E-mail"
+        cell.textFiel.text = user.email
+        cell.nameField = "email"
+        cell.delegate = self
+        cell.textFiel.keyboardType = UIKeyboardType.EmailAddress
+        return cell
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func cellDesc(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellTextTableViewCell", forIndexPath: indexPath) as! CellTextTableViewCell
+        cell.labelTitle.text = "Description"
+        cell.textViewDesc.text = user.description
+        cell.delegate = self
+        return cell
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    // MARK: - Delegates cells
+    
+    func CellTextTableViewCellDesc(desc: String) {
+        user.description = desc
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func CellInfoTableViewCellName(name: String) {
+        user.name = name
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func CellInfoTableViewCellEmail(email: String) {
+        user.email = email
     }
-    */
+    
+    @IBAction func touchButtonAdd(sender: AnyObject) {
+        postCreateUser(user)
+    }
+    
+    func postCreateUser(user: User) {
+        if utilNetwork.isNetworkAvailable() {
+            if (!user.name.isEmpty && !user.email.isEmpty && !user.description.isEmpty) {
+                utilViewController.showActivityIndicator("Saving new user...")
+                RestClient.postCreateUser(user) { result in
 
+                    self.utilViewController.hideActivityIndicator()
+                    
+                    if result.result.isFailure {
+                        self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
+                    } else {
+                        self.utilViewController.showMessage(self, message: "New user created with success!", okHandler: {
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                        })
+                    }
+                }
+            } else {
+                utilViewController.showMessage(self, message: "Please fill the field :)")
+            }
+        } else {
+            utilViewController.showMessage(self, message: "Network not available :(")
+        }
+    }
 }

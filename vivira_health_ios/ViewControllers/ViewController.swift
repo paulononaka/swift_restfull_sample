@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchAddButton(sender: AnyObject) {
-        
+        let screenDetail = FactoryStoryboard.storyboardHome().instantiateViewControllerWithIdentifier("userAddTableViewController") as? UserAddTableViewController
+        self.navigationController?.pushViewController(screenDetail!, animated: true)
     }
 }
 
