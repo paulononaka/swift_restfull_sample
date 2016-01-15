@@ -1,10 +1,9 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
-# Uncomment this line if you're using Swift
-# use_frameworks!
+platform :ios, '8.2'
+use_frameworks!
 
 target 'vivira_health_ios' do
-
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper'
 end
 
 target 'vivira_health_iosTests' do
