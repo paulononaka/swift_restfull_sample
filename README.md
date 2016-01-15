@@ -22,6 +22,8 @@ $ pod install
 - AlamofireObjectMapper: An Alamofire extension which converts JSON response data into swift objects using ObjectMapper.
 - OHHTTPStubs: OHHTTPStubs is a library designed to stub your network requests very easily.
 - OHHTTPStubs/Swift: Adds some global function helpers to make the use of OHHTTPStubs more compact and Swift-like.
+- ReachabilitySwift: Replacement for Apple's Reachability re-written in Swift with closures
+- SwiftLoader: A simple and beautiful activity indicator written in Swift
 
 ## Stubs
 

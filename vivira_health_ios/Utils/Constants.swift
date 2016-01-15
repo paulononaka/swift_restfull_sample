@@ -18,6 +18,7 @@ struct Constants {
         }
     }
     struct ColorsHex {
+        static let INDICATOR = "#485BBD"
         static let NAVIGATOR = "#485BBD"
     }
 }

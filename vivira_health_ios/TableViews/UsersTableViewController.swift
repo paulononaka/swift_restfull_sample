@@ -3,6 +3,8 @@ import UIKit
 class UsersTableViewController: UITableViewController {
     
     var users: [User] = []
+    var utilNetwork = UtilNetwork.sharedInstance
+    var utilViewController = UtilViewController.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +36,20 @@ class UsersTableViewController: UITableViewController {
     }
     
     func getUsers() {
-        RestClient.getUsers() { result in
-            self.users = result.result.value!.users
-            self.tableView.reloadData()
+        if utilNetwork.isNetworkAvailable() {
+            utilViewController.showActivityIndicator("Searching...")
+            
+            RestClient.getUsers() { result in
+                self.utilViewController.hideActivityIndicator()
+                if result.result.isFailure {
+                    self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
+                } else {
+                    self.users = result.result.value!.users
+                    self.tableView.reloadData()
+                }
+            }
+        } else {
+            utilViewController.showMessage(self, message: "Network not available :(")
         }
     }
 

@@ -6,6 +6,8 @@ target 'vivira_health_ios' do
     pod 'AlamofireObjectMapper'
     pod 'OHHTTPStubs'
     pod 'OHHTTPStubs/Swift'
+    pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+    pod 'SwiftLoader'
 end
 
 target 'vivira_health_iosTests' do
