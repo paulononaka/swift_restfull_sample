@@ -11,6 +11,11 @@ struct Constants {
             static let CREATE_USER = "/api/users/"
             static let DEL_USER    = "/api/users/"
         }
+        struct FORM {
+            static let USER_NAME        = "user[name]"
+            static let USER_EMAIL       = "user[email]"
+            static let USER_DESCRIPTION = "user[description]"
+        }
     }
     struct ColorsHex {
         static let NAVIGATOR = "#485BBD"

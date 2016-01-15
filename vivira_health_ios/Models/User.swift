@@ -15,6 +15,14 @@ class User: Mappable {
     init(){
     }
     
+    init(id: Int!, name: String!, photo_url: String!, email: String!, description: String!) {
+        self.id = id
+        self.name = name
+        self.photo_url = photo_url
+        self.email = email
+        self.description = description
+    }
+    
     func mapping(map: Map) {
         id           <- map["id"]
         name         <- map["name"]

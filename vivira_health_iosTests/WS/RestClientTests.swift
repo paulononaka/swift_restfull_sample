@@ -61,4 +61,20 @@ class RestClientTests: XCTestCase {
         }
     }
     
+    func testEditUserShouldReturnTheUserPassedAsParameter() {
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
+        var receivedData: User = User()
+        
+        let userParam = User(id: 1, name: "Paulo", photo_url: "http://goo.gl/GoUUrD", email: "paulononaka@gmail.com", description: "some nice guy")
+        
+        RestClient.putEditUser(userParam) { result in
+            receivedData = result.result.value!.user!
+            responseArrived.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(TIMEOUT) { err in
+            XCTAssertTrue(receivedData.id == userParam.id, "Should return data from the passed user")
+        }
+    }
+    
 }

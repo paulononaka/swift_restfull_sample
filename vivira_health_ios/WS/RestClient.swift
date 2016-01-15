@@ -20,4 +20,17 @@ class RestClient {
                 completionHandler(result: response)
         }
     }
+    
+    class func putEditUser(userEdit: User, completionHandler: (result: Response<TOUser, NSError>) -> Void ){
+        let parameters = [
+            Constants.WS.FORM.USER_NAME: userEdit.name,
+            Constants.WS.FORM.USER_EMAIL: userEdit.email,
+            Constants.WS.FORM.USER_DESCRIPTION: userEdit.description
+        ]
+        Alamofire.request(.PUT, URL+Constants.WS.END_POINT.EDIT_USER+String(userEdit.id), parameters: parameters)
+            .responseObject() { (response: Response<TOUser, NSError>) in
+                completionHandler(result: response)
+        }
+    }
+
 }
