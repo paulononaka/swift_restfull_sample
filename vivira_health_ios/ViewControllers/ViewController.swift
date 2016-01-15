@@ -7,7 +7,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "User"
+        title = "Users"
         addButtonSideRight(buttonUserAdd)
     }
 

@@ -37,6 +37,33 @@ class UserDetailEditViewController: UIViewController, UserDetailEditTableViewCon
         putEditUser(user)
     }
     
+    @IBAction func touchButtonDelete(sender: AnyObject) {
+        deleteUser(user)
+    }
+    
+    // MARK: - Call Ws Delete and Put
+    
+    func deleteUser(user: User) {
+        if utilNetwork.isNetworkAvailable() {
+            utilViewController.showActivityIndicator("deleting user...")
+            RestClient.deleteUser(user.id) { result in
+                self.utilViewController.hideActivityIndicator()
+                if result.result.isFailure &&
+                    result.response?.statusCode < 200 && // AlamofireObjectMapper bug: it fail if there is no response from server
+                    result.response?.statusCode >= 300
+                {
+                    self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
+                } else {
+                    self.utilViewController.showMessage(self, message: "User deleted with success!", okHandler: {
+                        self.navigationController?.popToRootViewControllerAnimated(true)
+                    })
+                }
+            }
+        } else {
+            utilViewController.showMessage(self, message:"We don't have internet. Please connect and try again :(")
+        }
+    }
+    
     func putEditUser(user: User) {
         if utilNetwork.isNetworkAvailable() {
             utilViewController.showActivityIndicator("Update user...")

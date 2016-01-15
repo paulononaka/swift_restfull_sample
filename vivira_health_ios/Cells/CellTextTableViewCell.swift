@@ -4,7 +4,7 @@ protocol CellTextTableViewCellDelegate{
     func CellTextTableViewCellDesc(desc: String)
 }
 
-class CellTextTableViewCell: UITableViewCell {
+class CellTextTableViewCell: UITableViewCell, UITextViewDelegate {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var textViewDesc: UITextView!
@@ -20,7 +20,8 @@ class CellTextTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-         self.textViewDesc?.inputAccessoryView = UtilKeyBoard.viewButtonControlWithConfirmTarget(self, methodConfirm: "keyBoardConfirm", titleConfirm: "Confirm", targetCancel: self, methodCancel: "keyBoardCancel", titleCancel: "Cancel", targetHideKeyboard: self, methodHideKeyboard: "turnOffField")
+        self.textViewDesc.delegate = self
+        self.textViewDesc?.inputAccessoryView = UtilKeyBoard.viewButtonControlWithConfirmTarget(self, methodConfirm: "keyBoardConfirm", titleConfirm: "Confirm", targetCancel: self, methodCancel: "keyBoardCancel", titleCancel: "Cancel", targetHideKeyboard: self, methodHideKeyboard: "turnOffField")
     }
     
     func keyBoardConfirm(){
@@ -31,6 +32,11 @@ class CellTextTableViewCell: UITableViewCell {
     
     func keyBoardCancel(){
         turnOffField()
+        let text = self.textViewDesc.text
+        delegate?.CellTextTableViewCellDesc(text)
+    }
+    
+    func textViewDidChange(textView: UITextView) {
         let text = self.textViewDesc.text
         delegate?.CellTextTableViewCellDesc(text)
     }

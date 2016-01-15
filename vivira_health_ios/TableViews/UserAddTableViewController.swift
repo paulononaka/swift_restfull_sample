@@ -52,7 +52,7 @@ class UserAddTableViewController: UITableViewController, CellTextTableViewCellDe
     func cellName(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("cellInfoTableViewCell", forIndexPath: indexPath) as! CellInfoTableViewCell
         cell.labelTitle.text = "Name"
-        cell.textFiel.text = user.name
+        cell.textField.text = user.name
         cell.nameField = "name"
         cell.delegate = self
         return cell
@@ -61,10 +61,10 @@ class UserAddTableViewController: UITableViewController, CellTextTableViewCellDe
     func cellEmail(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("cellInfoTableViewCell", forIndexPath: indexPath) as! CellInfoTableViewCell
         cell.labelTitle.text = "E-mail"
-        cell.textFiel.text = user.email
+        cell.textField.text = user.email
         cell.nameField = "email"
         cell.delegate = self
-        cell.textFiel.keyboardType = UIKeyboardType.EmailAddress
+        cell.textField.keyboardType = UIKeyboardType.EmailAddress
         return cell
     }
     

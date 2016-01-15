@@ -3,12 +3,17 @@ import XCTest
 class EditUserUITests: XCTestCase {
     
     let app = XCUIApplication()
+    let exists = NSPredicate(format: "exists == 1")
         
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
         app.launchEnvironment["TEST"] = "1"
         app.launch()
+        
+        let navigation = app.navigationBars["Users"].staticTexts["Users"]
+        expectationForPredicate(exists, evaluatedWithObject: navigation, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
     }
     
     override func tearDown() {
@@ -16,18 +21,23 @@ class EditUserUITests: XCTestCase {
     }
     
     func testShouldBeAbleToEditSomeExistingUser() {
+        
         // Given I have a user
+
         let user = app.tables.staticTexts["Ronald Sanders"]
-        let exists = NSPredicate(format: "exists == 1")
         expectationForPredicate(exists, evaluatedWithObject: user, handler: nil)
         waitForExpectationsWithTimeout(5, handler: nil)
+                
+        // When I select a user from the list
         
         user.tap()
         
-        // When I select a user from the list
-        app.navigationBars["Ronald Sanders"].buttons["Edit"].tap()
-        
         // And fill the form and save
+
+        let navigation = app.navigationBars["Ronald Sanders"].staticTexts["Ronald Sanders"]
+        expectationForPredicate(exists, evaluatedWithObject: navigation, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
+        
         let tablesQuery = app.tables
         
         let textField = tablesQuery.cells.containingType(.StaticText, identifier:"Name").childrenMatchingType(.TextField).element
@@ -50,6 +60,7 @@ class EditUserUITests: XCTestCase {
         app.navigationBars["Edit"].buttons["Save"].tap()
         
         // Then I should see success message
+        
         XCTAssert(app.alerts["Vivira"].staticTexts["User edited with success!"].exists)
     }
     

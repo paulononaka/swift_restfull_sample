@@ -1,6 +1,6 @@
 import XCTest
 
-class UserDetailsUITests: XCTestCase {
+class DeleteUserUITests: XCTestCase {
     
     let app = XCUIApplication()
         
@@ -20,23 +20,26 @@ class UserDetailsUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testShouldShowUserInfo() {
+    func testShouldBeAbleToDeleteSomeExistingUser() {
         
-        // Given I have a user Ronald Sander
+        // Given I have a user
         
         let user = app.tables.staticTexts["Ronald Sanders"]
         let exists = NSPredicate(format: "exists == 1")
         expectationForPredicate(exists, evaluatedWithObject: user, handler: nil)
         waitForExpectationsWithTimeout(5, handler: nil)
-
-        // When I select this user from the list
+                
+        // When I select a user from the list
         
         user.tap()
         
-        // Then I should see
+        // And click on delete button
         
-        XCTAssert(app.staticTexts["ronald.sanders@gmail.com"].exists)
-        XCTAssert(app.staticTexts["Ronald Sanders"].exists)
+        app.buttons["Delete user"].tap()
+        
+        // Then I should see success message
+        
+        XCTAssert(app.alerts["Vivira"].staticTexts["User edited with success!"].exists)
     }
     
 }

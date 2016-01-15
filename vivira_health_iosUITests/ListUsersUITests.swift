@@ -9,6 +9,15 @@ class ListUsersUITests: XCTestCase {
         continueAfterFailure = false
         app.launchEnvironment["TEST"] = "1"
         app.launch()
+        
+        let navigation = app.navigationBars["Users"].staticTexts["Users"]
+        let exists = NSPredicate(format: "exists == 1")
+        expectationForPredicate(exists, evaluatedWithObject: navigation, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
+        
+        let user = app.tables.staticTexts["Ronald Sanders"]
+        expectationForPredicate(exists, evaluatedWithObject: user, handler: nil)
+        waitForExpectationsWithTimeout(5, handler: nil)
     }
     
     override func tearDown() {

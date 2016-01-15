@@ -275,7 +275,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="labelTitle" destination="Wpb-9t-9sm" id="sqo-Es-nAJ"/>
-                                    <outlet property="textFiel" destination="QK6-Mm-1Fq" id="cBc-Ck-Dpp"/>
+                                    <outlet property="textField" destination="QK6-Mm-1Fq" id="yBL-g2-1Cc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -318,6 +318,9 @@
                                 <state key="normal" title="Delete user">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchButtonDelete:" destination="z17-V8-0nI" eventType="touchUpInside" id="tRq-aO-xfd"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-nU-CKL">
                                 <rect key="frame" x="0.0" y="64" width="320" height="458"/>
@@ -399,7 +402,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9t-KU-Ong">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9t-KU-Ong">
                                             <rect key="frame" x="15" y="8" width="258" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="9mh-JT-jM5"/>
@@ -413,9 +416,9 @@
                                         <constraint firstAttribute="trailing" secondItem="P9t-KU-Ong" secondAttribute="trailing" constant="47" id="2An-Y2-vC5"/>
                                         <constraint firstAttribute="bottom" secondItem="Y0h-qc-Axp" secondAttribute="bottom" constant="33" id="CtV-LK-ANK"/>
                                         <constraint firstItem="Y0h-qc-Axp" firstAttribute="leading" secondItem="1BT-mw-VbM" secondAttribute="leading" constant="15" id="GGT-e9-cgo"/>
-                                        <constraint firstItem="Y0h-qc-Axp" firstAttribute="top" secondItem="P9t-KU-Ong" secondAttribute="bottom" constant="9" id="GuR-lk-MwV"/>
+                                        <constraint firstItem="Y0h-qc-Axp" firstAttribute="top" secondItem="P9t-KU-Ong" secondAttribute="bottom" constant="10" id="GuR-lk-MwV"/>
                                         <constraint firstAttribute="trailing" secondItem="Y0h-qc-Axp" secondAttribute="trailing" constant="15" id="cx0-1P-iJe"/>
-                                        <constraint firstItem="P9t-KU-Ong" firstAttribute="top" secondItem="1BT-mw-VbM" secondAttribute="top" constant="9" id="dxb-VU-VtX"/>
+                                        <constraint firstItem="P9t-KU-Ong" firstAttribute="top" secondItem="1BT-mw-VbM" secondAttribute="top" constant="8" id="dxb-VU-VtX"/>
                                         <constraint firstItem="P9t-KU-Ong" firstAttribute="leading" secondItem="1BT-mw-VbM" secondAttribute="leading" constant="15" id="pcb-8W-89F"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -460,7 +463,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="labelTitle" destination="Uuy-s3-mHG" id="GY4-u7-Dd5"/>
-                                    <outlet property="textFiel" destination="zQ3-Ln-8gx" id="Whc-Uh-7BX"/>
+                                    <outlet property="textField" destination="zQ3-Ln-8gx" id="015-wb-a2W"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

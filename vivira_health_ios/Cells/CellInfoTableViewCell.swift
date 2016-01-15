@@ -8,7 +8,7 @@ protocol CellInfoTableViewCellDelegate{
 class CellInfoTableViewCell: UITableViewCell,UITextFieldDelegate {
 
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var textFiel: UITextField!
+    @IBOutlet weak var textField: UITextField!
     var delegate: CellInfoTableViewCellDelegate?
     var nameField = ""
     
@@ -22,25 +22,16 @@ class CellInfoTableViewCell: UITableViewCell,UITextFieldDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        textFiel.delegate = self
-    }
-
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.textFiel?.resignFirstResponder()
-        if nameField == "name"{
-            delegate?.CellInfoTableViewCellName(textFiel.text!)
-        }else{
-            delegate?.CellInfoTableViewCellEmail(textFiel.text!)
-        }
-        return true
+        textField.delegate = self
+        textField.addTarget(self, action: "didChangeText:", forControlEvents: .EditingChanged)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func didChangeText(textField:UITextField) {
         if nameField == "name"{
-            delegate?.CellInfoTableViewCellName(textFiel.text!)
+            delegate?.CellInfoTableViewCellName(textField.text!)
         }else{
-            delegate?.CellInfoTableViewCellEmail(textFiel.text!)
+            delegate?.CellInfoTableViewCellEmail(textField.text!)
         }
-        return true
     }
+
 }

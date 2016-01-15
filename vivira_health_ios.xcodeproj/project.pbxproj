@@ -26,6 +26,7 @@
 		816DE66C1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66B1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift */; };
 		816DE66E1C497537004C3FE9 /* CellPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66D1C497537004C3FE9 /* CellPhotoTableViewCell.swift */; };
 		816DE6701C49782D004C3FE9 /* EditUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */; };
+		816DE6721C498294004C3FE9 /* DeleteUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6711C498294004C3FE9 /* DeleteUserUITests.swift */; };
 		818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC74F1C4922BC00069BA2 /* RestClientTests.swift */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		816DE66B1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailEditTableViewController.swift; sourceTree = "<group>"; };
 		816DE66D1C497537004C3FE9 /* CellPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserUITests.swift; sourceTree = "<group>"; };
+		816DE6711C498294004C3FE9 /* DeleteUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserUITests.swift; sourceTree = "<group>"; };
 		818AC74F1C4922BC00069BA2 /* RestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		81B14CE01C490F7B003B0072 /* vivira_health_iosUITests */ = {
 			isa = PBXGroup;
 			children = (
+				816DE6711C498294004C3FE9 /* DeleteUserUITests.swift */,
 				816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */,
 				816DE6671C496F2E004C3FE9 /* CreateUserUITests.swift */,
 				816DE6631C496A69004C3FE9 /* UserDetailsUITests.swift */,
@@ -619,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E52E1B1C4934610085C50D /* ListUsersUITests.swift in Sources */,
+				816DE6721C498294004C3FE9 /* DeleteUserUITests.swift in Sources */,
 				816DE6681C496F2E004C3FE9 /* CreateUserUITests.swift in Sources */,
 				816DE6701C49782D004C3FE9 /* EditUserUITests.swift in Sources */,
 				816DE6641C496A69004C3FE9 /* UserDetailsUITests.swift in Sources */,
