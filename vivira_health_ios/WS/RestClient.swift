@@ -32,5 +32,11 @@ class RestClient {
                 completionHandler(result: response)
         }
     }
-
+    
+    class func deleteUser(idUser: Int, completionHandler: (result: Response<TOUser, NSError>) -> Void ){
+        Alamofire.request(.DELETE, URL+Constants.WS.END_POINT.DEL_USER+String(idUser), parameters: nil)
+            .responseObject() { (response: Response<TOUser, NSError>) in
+                completionHandler(result: response)
+        }
+    }
 }

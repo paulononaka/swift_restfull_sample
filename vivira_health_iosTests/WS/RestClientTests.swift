@@ -51,6 +51,7 @@ class RestClientTests: XCTestCase {
         var receivedData: User = User()
         
         let userIdParam = 1
+        
         RestClient.getUserDetail(userIdParam) { result in
             receivedData = result.result.value!.user!
             responseArrived.fulfill()
@@ -74,6 +75,22 @@ class RestClientTests: XCTestCase {
         
         self.waitForExpectationsWithTimeout(TIMEOUT) { err in
             XCTAssertTrue(receivedData.id == userParam.id, "Should return data from the passed user")
+        }
+    }
+    
+    func testDeleteUserShouldReturnTheUserPassedAsParameter() {
+        let responseArrived = self.expectationWithDescription("response of async request has arrived")
+        var succeed: Bool = false
+        
+        let userIdParam = 1
+        
+        RestClient.deleteUser(userIdParam) { result in
+            succeed = result.result.isSuccess
+            responseArrived.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(TIMEOUT) { err in
+            XCTAssertTrue(succeed, "Should delete with success")
         }
     }
     
