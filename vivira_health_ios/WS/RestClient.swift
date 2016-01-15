@@ -39,4 +39,16 @@ class RestClient {
                 completionHandler(result: response)
         }
     }
+    
+    class func postCreateUser(userCreate: User, completionHandler: (result: Response<TOUser, NSError>) -> Void ){
+        let parameters = [
+            Constants.WS.FORM.USER_NAME: userCreate.name,
+            Constants.WS.FORM.USER_EMAIL: userCreate.email,
+            Constants.WS.FORM.USER_DESCRIPTION: userCreate.description
+        ]
+        Alamofire.request(.POST, URL+Constants.WS.END_POINT.CREATE_USER, parameters: parameters)
+            .responseObject() { (response: Response<TOUser, NSError>) in
+                completionHandler(result: response)
+        }
+    }
 }
