@@ -7,7 +7,8 @@ target 'vivira_health_ios' do
 end
 
 target 'vivira_health_iosTests' do
-
+    pod 'OHHTTPStubs'
+    pod 'OHHTTPStubs/Swift'
 end
 
 target 'vivira_health_iosUITests' do

@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5206EB72C88027C9F3BC62A3 /* Pods_vivira_health_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389A9CE6A24E9433CD8A3302 /* Pods_vivira_health_ios.framework */; };
+		818AC74D1C49224D00069BA2 /* 3_users.json in Resources */ = {isa = PBXBuildFile; fileRef = 818AC74C1C49224D00069BA2 /* 3_users.json */; };
+		818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC74F1C4922BC00069BA2 /* RestClientTests.swift */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
 		81B14CC91C490F7B003B0072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC81C490F7B003B0072 /* Assets.xcassets */; };
 		81B14CCC1C490F7B003B0072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CCA1C490F7B003B0072 /* LaunchScreen.storyboard */; };
-		81B14CD71C490F7B003B0072 /* vivira_health_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CD61C490F7B003B0072 /* vivira_health_iosTests.swift */; };
 		81B14CE21C490F7B003B0072 /* vivira_health_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CE11C490F7B003B0072 /* vivira_health_iosUITests.swift */; };
 		81B14CF61C4911B4003B0072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CF51C4911B4003B0072 /* ViewController.swift */; };
+		81B14CF81C491220003B0072 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CF71C491220003B0072 /* RestClient.swift */; };
+		81B14CFA1C49127B003B0072 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CF91C49127B003B0072 /* Constants.swift */; };
+		81B14CFC1C4912CF003B0072 /* TOUsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CFB1C4912CF003B0072 /* TOUsersList.swift */; };
+		81B14CFE1C4912DB003B0072 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CFD1C4912DB003B0072 /* User.swift */; };
+		81B14D001C4912F9003B0072 /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CFF1C4912F9003B0072 /* ErrorDetail.swift */; };
+		D04E7DFBB72445B8B99ABB70 /* Pods_vivira_health_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2328A82BE712FE781888E5 /* Pods_vivira_health_iosTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2328A82BE712FE781888E5 /* Pods_vivira_health_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vivira_health_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		389A9CE6A24E9433CD8A3302 /* Pods_vivira_health_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vivira_health_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B33F04788C037034EDFF7F9 /* Pods-vivira_health_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_ios/Pods-vivira_health_ios.release.xcconfig"; sourceTree = "<group>"; };
+		40202E3FC4DB6FFE2EA4B297 /* Pods-vivira_health_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_iosTests/Pods-vivira_health_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		818AC74C1C49224D00069BA2 /* 3_users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3_users.json; sourceTree = "<group>"; };
+		818AC74F1C4922BC00069BA2 /* RestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81B14CC61C490F7B003B0072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,13 +55,18 @@
 		81B14CCB1C490F7B003B0072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81B14CCD1C490F7B003B0072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B14CD21C490F7B003B0072 /* vivira_health_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vivira_health_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81B14CD61C490F7B003B0072 /* vivira_health_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vivira_health_iosTests.swift; sourceTree = "<group>"; };
 		81B14CD81C490F7B003B0072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B14CDD1C490F7B003B0072 /* vivira_health_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vivira_health_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CE11C490F7B003B0072 /* vivira_health_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vivira_health_iosUITests.swift; sourceTree = "<group>"; };
 		81B14CE31C490F7B003B0072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B14CF51C4911B4003B0072 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81B14CF71C491220003B0072 /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		81B14CF91C49127B003B0072 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81B14CFB1C4912CF003B0072 /* TOUsersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOUsersList.swift; sourceTree = "<group>"; };
+		81B14CFD1C4912DB003B0072 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		81B14CFF1C4912F9003B0072 /* ErrorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
 		81FD6D2F483FE7F6E37906CE /* Pods-vivira_health_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_ios/Pods-vivira_health_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		F869AE322B1335B2DD0B54B9 /* Pods-vivira_health_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_iosTests/Pods-vivira_health_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04E7DFBB72445B8B99ABB70 /* Pods_vivira_health_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +101,26 @@
 			children = (
 				81FD6D2F483FE7F6E37906CE /* Pods-vivira_health_ios.debug.xcconfig */,
 				3B33F04788C037034EDFF7F9 /* Pods-vivira_health_ios.release.xcconfig */,
+				40202E3FC4DB6FFE2EA4B297 /* Pods-vivira_health_iosTests.debug.xcconfig */,
+				F869AE322B1335B2DD0B54B9 /* Pods-vivira_health_iosTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		818AC7471C4920C000069BA2 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				818AC74C1C49224D00069BA2 /* 3_users.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		818AC74E1C4922A300069BA2 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+				818AC74F1C4922BC00069BA2 /* RestClientTests.swift */,
+			);
+			path = WS;
 			sourceTree = "<group>";
 		};
 		81B14CB51C490F7B003B0072 = {
@@ -129,7 +164,8 @@
 		81B14CD51C490F7B003B0072 /* vivira_health_iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				81B14CD61C490F7B003B0072 /* vivira_health_iosTests.swift */,
+				818AC74E1C4922A300069BA2 /* WS */,
+				818AC7471C4920C000069BA2 /* Stubs */,
 				81B14CD81C490F7B003B0072 /* Info.plist */,
 			);
 			path = vivira_health_iosTests;
@@ -154,6 +190,9 @@
 		81B14CF01C491174003B0072 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81B14CFB1C4912CF003B0072 /* TOUsersList.swift */,
+				81B14CFD1C4912DB003B0072 /* User.swift */,
+				81B14CFF1C4912F9003B0072 /* ErrorDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +209,7 @@
 		81B14CF21C491174003B0072 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				81B14CF91C49127B003B0072 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,6 +225,7 @@
 		81B14CF41C491174003B0072 /* WS */ = {
 			isa = PBXGroup;
 			children = (
+				81B14CF71C491220003B0072 /* RestClient.swift */,
 			);
 			path = WS;
 			sourceTree = "<group>";
@@ -193,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				389A9CE6A24E9433CD8A3302 /* Pods_vivira_health_ios.framework */,
+				0B2328A82BE712FE781888E5 /* Pods_vivira_health_iosTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,9 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81B14CE91C490F7B003B0072 /* Build configuration list for PBXNativeTarget "vivira_health_iosTests" */;
 			buildPhases = (
+				67823ADEBC7F28A47010AFF7 /* Check Pods Manifest.lock */,
 				81B14CCE1C490F7B003B0072 /* Sources */,
 				81B14CCF1C490F7B003B0072 /* Frameworks */,
 				81B14CD01C490F7B003B0072 /* Resources */,
+				083435082A6CB9EA1D0A994E /* Embed Pods Frameworks */,
+				07CB65CB8AC31E81F9C9246B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +313,7 @@
 				TargetAttributes = {
 					81B14CBD1C490F7B003B0072 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R6PEW22T4N;
 					};
 					81B14CD11C490F7B003B0072 = {
 						CreatedOnToolsVersion = 7.2;
@@ -314,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818AC74D1C49224D00069BA2 /* 3_users.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +374,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07CB65CB8AC31E81F9C9246B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vivira_health_iosTests/Pods-vivira_health_iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		083435082A6CB9EA1D0A994E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vivira_health_iosTests/Pods-vivira_health_iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67823ADEBC7F28A47010AFF7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		6A64972DC4C8DEA001A0EA3F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,7 +472,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81B14CF61C4911B4003B0072 /* ViewController.swift in Sources */,
+				81B14CF81C491220003B0072 /* RestClient.swift in Sources */,
+				81B14CFE1C4912DB003B0072 /* User.swift in Sources */,
 				81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */,
+				81B14D001C4912F9003B0072 /* ErrorDetail.swift in Sources */,
+				81B14CFC1C4912CF003B0072 /* TOUsersList.swift in Sources */,
+				81B14CFA1C49127B003B0072 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B14CD71C490F7B003B0072 /* vivira_health_iosTests.swift in Sources */,
+				818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +620,7 @@
 			baseConfigurationReference = 81FD6D2F483FE7F6E37906CE /* Pods-vivira_health_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = vivira_health_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-ios";
@@ -535,6 +633,7 @@
 			baseConfigurationReference = 3B33F04788C037034EDFF7F9 /* Pods-vivira_health_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = vivira_health_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-ios";
@@ -544,20 +643,25 @@
 		};
 		81B14CEA1C490F7B003B0072 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40202E3FC4DB6FFE2EA4B297 /* Pods-vivira_health_iosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = vivira_health_iosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vivira_health_ios.app/vivira_health_ios";
 			};
 			name = Debug;
 		};
 		81B14CEB1C490F7B003B0072 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F869AE322B1335B2DD0B54B9 /* Pods-vivira_health_iosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = vivira_health_iosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-iosTests";
