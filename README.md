@@ -26,9 +26,14 @@ $ pod install
 - SwiftLoader: A simple and beautiful activity indicator written in Swift
 - KFSwiftImageLoader: An extremely high-performance, lightweight, and energy-efficient pure Swift async web image loader with memory and disk caching for iOS and Smart Watch.
 
-## Stubs
+## UI Tests
+
+- Stubs:
 
 Because of how UI tests work, we cannot directly interact with the app at runtime, so any HTTP mocking or manipulation of things like NSUserDefaults in a XCUITestCase will not affect our app.
 
 To be able to mock HTTP or setup & teardown our apps environment for specific UI tests, we will need to set launch arguments or launch environment variables before launching the app in the setUp() method of a XCUITestCase and then modify our app code to read the launch arguments or environment variables and bootstrap the test environment
 
+- Running on simulator:
+
+Make sure 'Hardware -> Keyboard -> Connect hardware keyboard' is on.
