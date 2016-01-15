@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		5206EB72C88027C9F3BC62A3 /* Pods_vivira_health_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389A9CE6A24E9433CD8A3302 /* Pods_vivira_health_ios.framework */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
-		81B14CC41C490F7B003B0072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC31C490F7B003B0072 /* ViewController.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
 		81B14CC91C490F7B003B0072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC81C490F7B003B0072 /* Assets.xcassets */; };
 		81B14CCC1C490F7B003B0072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CCA1C490F7B003B0072 /* LaunchScreen.storyboard */; };
 		81B14CD71C490F7B003B0072 /* vivira_health_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CD61C490F7B003B0072 /* vivira_health_iosTests.swift */; };
 		81B14CE21C490F7B003B0072 /* vivira_health_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CE11C490F7B003B0072 /* vivira_health_iosUITests.swift */; };
+		81B14CF61C4911B4003B0072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CF51C4911B4003B0072 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		3B33F04788C037034EDFF7F9 /* Pods-vivira_health_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_ios/Pods-vivira_health_ios.release.xcconfig"; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81B14CC31C490F7B003B0072 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81B14CC61C490F7B003B0072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81B14CC81C490F7B003B0072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81B14CCB1C490F7B003B0072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		81B14CDD1C490F7B003B0072 /* vivira_health_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vivira_health_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CE11C490F7B003B0072 /* vivira_health_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vivira_health_iosUITests.swift; sourceTree = "<group>"; };
 		81B14CE31C490F7B003B0072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B14CF51C4911B4003B0072 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81FD6D2F483FE7F6E37906CE /* Pods-vivira_health_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vivira_health_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vivira_health_ios/Pods-vivira_health_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,11 +114,14 @@
 			isa = PBXGroup;
 			children = (
 				81B14CC11C490F7B003B0072 /* AppDelegate.swift */,
-				81B14CC31C490F7B003B0072 /* ViewController.swift */,
-				81B14CC51C490F7B003B0072 /* Main.storyboard */,
 				81B14CC81C490F7B003B0072 /* Assets.xcassets */,
-				81B14CCA1C490F7B003B0072 /* LaunchScreen.storyboard */,
+				81B14CEF1C491174003B0072 /* Cells */,
 				81B14CCD1C490F7B003B0072 /* Info.plist */,
+				81B14CF01C491174003B0072 /* Models */,
+				81B14CF11C491174003B0072 /* StoryBoards */,
+				81B14CF21C491174003B0072 /* Utils */,
+				81B14CF31C491174003B0072 /* ViewControllers */,
+				81B14CF41C491174003B0072 /* WS */,
 			);
 			path = vivira_health_ios;
 			sourceTree = "<group>";
@@ -139,6 +142,51 @@
 				81B14CE31C490F7B003B0072 /* Info.plist */,
 			);
 			path = vivira_health_iosUITests;
+			sourceTree = "<group>";
+		};
+		81B14CEF1C491174003B0072 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		81B14CF01C491174003B0072 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81B14CF11C491174003B0072 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				81B14CCA1C490F7B003B0072 /* LaunchScreen.storyboard */,
+				81B14CC51C490F7B003B0072 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		81B14CF21C491174003B0072 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		81B14CF31C491174003B0072 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81B14CF51C4911B4003B0072 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		81B14CF41C491174003B0072 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WS;
 			sourceTree = "<group>";
 		};
 		E11D565B6742ABA08290EA04 /* Frameworks */ = {
@@ -331,7 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81B14CC41C490F7B003B0072 /* ViewController.swift in Sources */,
+				81B14CF61C4911B4003B0072 /* ViewController.swift in Sources */,
 				81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +422,7 @@
 				81B14CC61C490F7B003B0072 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		81B14CCA1C490F7B003B0072 /* LaunchScreen.storyboard */ = {
@@ -382,6 +431,7 @@
 				81B14CCB1C490F7B003B0072 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
