@@ -15,6 +15,9 @@ class ErrorDetail: Mappable {
     }
     
     func mapping(map: Map) {
-        detail <- map["detail"]
+        detail      <- map["detail"]
+        name        <- map["name"]
+        email       <- map["email"]
+        description <- map["description"]
     }
 }

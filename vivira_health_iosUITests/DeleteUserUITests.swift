@@ -33,13 +33,14 @@ class DeleteUserUITests: XCTestCase {
         
         user.tap()
         
-        // And click on delete button
-        
+        // And edit and click on delete button
+
+        app.navigationBars["Ronald Sanders"].buttons["Edit"].tap()
         app.buttons["Delete user"].tap()
         
         // Then I should see success message
         
-        XCTAssert(app.alerts["Vivira"].staticTexts["User edited with success!"].exists)
+        XCTAssert(app.alerts["Vivira"].staticTexts["User deleted with success!"].exists)
     }
     
 }

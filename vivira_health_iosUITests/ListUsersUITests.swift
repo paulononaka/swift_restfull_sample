@@ -14,10 +14,6 @@ class ListUsersUITests: XCTestCase {
         let exists = NSPredicate(format: "exists == 1")
         expectationForPredicate(exists, evaluatedWithObject: navigation, handler: nil)
         waitForExpectationsWithTimeout(5, handler: nil)
-        
-        let user = app.tables.staticTexts["Ronald Sanders"]
-        expectationForPredicate(exists, evaluatedWithObject: user, handler: nil)
-        waitForExpectationsWithTimeout(5, handler: nil)
     }
     
     override func tearDown() {
@@ -25,11 +21,17 @@ class ListUsersUITests: XCTestCase {
     }
     
     func testShouldList3UsersInTableView() {
+        
+        // Then I should have
+        
         let cells = app.tables.cells
         XCTAssertEqual(cells.count, 3, "found instead: \(cells.count)")
     }
     
     func testShouldShowUserName() {
+        
+        // Then I should see
+        
         let cells = app.tables.cells
         
         let staticTextOfFirstCell = cells.elementBoundByIndex(0)

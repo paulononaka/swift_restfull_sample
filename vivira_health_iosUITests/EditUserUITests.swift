@@ -34,9 +34,7 @@ class EditUserUITests: XCTestCase {
         
         // And fill the form and save
 
-        let navigation = app.navigationBars["Ronald Sanders"].staticTexts["Ronald Sanders"]
-        expectationForPredicate(exists, evaluatedWithObject: navigation, handler: nil)
-        waitForExpectationsWithTimeout(5, handler: nil)
+        app.navigationBars["Ronald Sanders"].buttons["Edit"].tap()
         
         let tablesQuery = app.tables
         

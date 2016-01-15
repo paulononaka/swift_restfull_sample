@@ -102,7 +102,10 @@ class UserAddTableViewController: UITableViewController, CellTextTableViewCellDe
 
                     self.utilViewController.hideActivityIndicator()
                     
-                    if result.result.isFailure {
+                    if result.result.isFailure ||
+                        result.response?.statusCode < 200 ||
+                        result.response?.statusCode >= 300
+                    {
                         self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
                     } else {
                         self.utilViewController.showMessage(self, message: "New user created with success!", okHandler: {

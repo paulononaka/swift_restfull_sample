@@ -24,7 +24,7 @@ class CreateUserUITests: XCTestCase {
         
         // When I create a new User
         
-        app.navigationBars["User"].buttons["Add"].tap()
+        app.navigationBars["Users"].buttons["Add"].tap()
         
         // And fill the form and save
         

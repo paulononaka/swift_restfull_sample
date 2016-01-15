@@ -47,7 +47,10 @@ class UsersTableViewController: UITableViewController {
             
             RestClient.getUsers() { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure {
+                if result.result.isFailure ||
+                    result.response?.statusCode < 200 ||
+                    result.response?.statusCode >= 300
+                {
                     self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
                 } else {
                     self.users = result.result.value!.users
@@ -65,7 +68,10 @@ class UsersTableViewController: UITableViewController {
             
             RestClient.getUserDetail(user.id) { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure {
+                if result.result.isFailure ||
+                    result.response?.statusCode < 200 ||
+                    result.response?.statusCode >= 300
+                {
                     self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
                 } else {
                     let screenDetail = FactoryStoryboard.storyboardHome().instantiateViewControllerWithIdentifier("userDetailViewController") as? UserDetailViewController

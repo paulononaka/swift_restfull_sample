@@ -48,8 +48,8 @@ class UserDetailEditViewController: UIViewController, UserDetailEditTableViewCon
             utilViewController.showActivityIndicator("deleting user...")
             RestClient.deleteUser(user.id) { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure &&
-                    result.response?.statusCode < 200 && // AlamofireObjectMapper bug: it fail if there is no response from server
+                if result.result.isFailure ||
+                    result.response?.statusCode < 200 ||
                     result.response?.statusCode >= 300
                 {
                     self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
@@ -69,7 +69,10 @@ class UserDetailEditViewController: UIViewController, UserDetailEditTableViewCon
             utilViewController.showActivityIndicator("Update user...")
             RestClient.putEditUser(user) { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure {
+                if result.result.isFailure ||
+                    result.response?.statusCode < 200 ||
+                    result.response?.statusCode >= 300
+                {
                     self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
                 } else {
                     self.utilViewController.showMessage(self, message: "User edited with success!", okHandler: {

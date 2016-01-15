@@ -24,6 +24,7 @@ $ pod install
 - OHHTTPStubs/Swift: Adds some global function helpers to make the use of OHHTTPStubs more compact and Swift-like.
 - ReachabilitySwift: Replacement for Apple's Reachability re-written in Swift with closures
 - SwiftLoader: A simple and beautiful activity indicator written in Swift
+- KFSwiftImageLoader: An extremely high-performance, lightweight, and energy-efficient pure Swift async web image loader with memory and disk caching for iOS and Smart Watch.
 
 ## Stubs
 
