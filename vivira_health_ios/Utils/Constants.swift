@@ -8,4 +8,7 @@ struct Constants {
             static let GET_USERS   = "/api/users"
         }
     }
+    struct ColorsHex {
+        static let NAVIGATOR = "#485BBD"
+    }
 }
