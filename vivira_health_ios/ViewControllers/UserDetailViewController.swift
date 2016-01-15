@@ -15,7 +15,7 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = user.name
-        
+        addButtonSideRight(buttonEdit)
         self.name.text = user.name
         self.email.text = user.email
         self.desc.text = user.description
@@ -36,6 +36,16 @@ class UserDetailViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func addButtonSideRight(button: UIBarButtonItem) {
+        var array = [UIBarButtonItem]()
+        array.append(button)
+        self.navigationItem.rightBarButtonItems = array
+    }
+    
+    @IBAction func touchButtonEdit(sender: AnyObject) {
+        
     }
     
     //MARK: - Activity Indicator

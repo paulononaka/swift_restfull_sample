@@ -14,6 +14,9 @@
 		816DE6511C494738004C3FE9 /* UtilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE64F1C494738004C3FE9 /* UtilViewController.swift */; };
 		816DE6541C494F2C004C3FE9 /* UsersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6531C494F2C004C3FE9 /* UsersTableViewControllerTests.swift */; };
 		816DE6561C4951BF004C3FE9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */; };
+		816DE6581C495FEB004C3FE9 /* UserAddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6571C495FEB004C3FE9 /* UserAddTableViewController.swift */; };
+		816DE65A1C49602B004C3FE9 /* CellTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6591C49602B004C3FE9 /* CellTextTableViewCell.swift */; };
+		816DE65C1C496049004C3FE9 /* CellInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE65B1C496049004C3FE9 /* CellInfoTableViewCell.swift */; };
 		818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC74F1C4922BC00069BA2 /* RestClientTests.swift */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
@@ -67,6 +70,9 @@
 		816DE64F1C494738004C3FE9 /* UtilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilViewController.swift; sourceTree = "<group>"; };
 		816DE6531C494F2C004C3FE9 /* UsersTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewControllerTests.swift; sourceTree = "<group>"; };
 		816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		816DE6571C495FEB004C3FE9 /* UserAddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAddTableViewController.swift; sourceTree = "<group>"; };
+		816DE6591C49602B004C3FE9 /* CellTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTextTableViewCell.swift; sourceTree = "<group>"; };
+		816DE65B1C496049004C3FE9 /* CellInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellInfoTableViewCell.swift; sourceTree = "<group>"; };
 		818AC74F1C4922BC00069BA2 /* RestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				81C5C3631C492C3C00621680 /* UserTableViewCell.swift */,
+				816DE6591C49602B004C3FE9 /* CellTextTableViewCell.swift */,
+				816DE65B1C496049004C3FE9 /* CellInfoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				81C5C3611C492B8500621680 /* UsersTableViewController.swift */,
+				816DE6571C495FEB004C3FE9 /* UserAddTableViewController.swift */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -540,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816DE65C1C496049004C3FE9 /* CellInfoTableViewCell.swift in Sources */,
 				81B14CF61C4911B4003B0072 /* ViewController.swift in Sources */,
 				81E33FE11C493C69008FAD05 /* TOUser.swift in Sources */,
 				81B14CF81C491220003B0072 /* RestClient.swift in Sources */,
@@ -547,6 +557,8 @@
 				81B14CFE1C4912DB003B0072 /* User.swift in Sources */,
 				81C5C35C1C49280D00621680 /* UIColor+Hex.swift in Sources */,
 				81C5C35A1C4927CD00621680 /* FactoryStoryboard.swift in Sources */,
+				816DE6581C495FEB004C3FE9 /* UserAddTableViewController.swift in Sources */,
+				816DE65A1C49602B004C3FE9 /* CellTextTableViewCell.swift in Sources */,
 				81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */,
 				81C5C3711C492E2B00621680 /* HTTPStub.swift in Sources */,
 				816DE6511C494738004C3FE9 /* UtilViewController.swift in Sources */,
