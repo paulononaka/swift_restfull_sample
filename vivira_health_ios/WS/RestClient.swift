@@ -13,4 +13,11 @@ class RestClient {
                 completionHandler(result: response)
         }
     }
+    
+    class func getUserDetail(idUser: Int, completionHandler: (result: Response<TOUser, NSError>) -> Void ){
+        Alamofire.request(.GET, URL+Constants.WS.END_POINT.GET_USER+String(idUser), parameters: nil)
+            .responseObject() { (response: Response<TOUser, NSError>) in
+                completionHandler(result: response)
+        }
+    }
 }

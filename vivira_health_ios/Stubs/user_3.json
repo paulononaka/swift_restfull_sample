@@ -1,0 +1,9 @@
+{
+  "user": {
+    "photo_url": "https://s3-us-west-2.amazonaws.com/vivira/3.jpg",
+    "name": "Michael Tieló",
+    "id": 3,
+    "email": "michael@music.com",
+    "description": "Michael is on her way to becoming mayor of Boston"
+  }
+}

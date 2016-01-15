@@ -1,0 +1,9 @@
+{
+  "user": {
+    "photo_url": "https://s3-us-west-2.amazonaws.com/vivira/2.jpg",
+    "name": "David Smith",
+    "id": 2,
+    "email": "david@smith.com",
+    "description": "David is working with us since 2009"
+  }
+}
