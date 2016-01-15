@@ -297,5 +297,182 @@
             </objects>
             <point key="canvasLocation" x="715" y="-189"/>
         </scene>
+        <!--User Detail Edit View Controller-->
+        <scene sceneID="nGE-jz-ge8">
+            <objects>
+                <viewController storyboardIdentifier="userDetailEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z17-V8-0nI" customClass="UserDetailEditViewController" customModule="vivira_health_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AtW-Uh-b1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xh3-Dj-bZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jIv-Dk-bfC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUl-wI-SIY">
+                                <rect key="frame" x="15" y="530" width="290" height="30"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dlu-Nn-DdB"/>
+                                </constraints>
+                                <state key="normal" title="Delete user">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-nU-CKL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="458"/>
+                                <connections>
+                                    <segue destination="UEf-xC-PiG" kind="embed" id="AVf-n4-ceo"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yUl-wI-SIY" firstAttribute="top" secondItem="eaU-nU-CKL" secondAttribute="bottom" constant="8" id="Ag9-4v-o9z"/>
+                            <constraint firstItem="Xh3-Dj-bZT" firstAttribute="top" secondItem="yUl-wI-SIY" secondAttribute="bottom" constant="8" id="LtB-2v-f1c"/>
+                            <constraint firstItem="eaU-nU-CKL" firstAttribute="leading" secondItem="jIv-Dk-bfC" secondAttribute="leading" id="Mhm-jI-hNK"/>
+                            <constraint firstAttribute="trailing" secondItem="eaU-nU-CKL" secondAttribute="trailing" id="Rnk-RU-oMO"/>
+                            <constraint firstItem="yUl-wI-SIY" firstAttribute="leading" secondItem="jIv-Dk-bfC" secondAttribute="leading" constant="15" id="VQB-zV-lWZ"/>
+                            <constraint firstAttribute="trailing" secondItem="yUl-wI-SIY" secondAttribute="trailing" constant="15" id="ka2-gY-qfU"/>
+                            <constraint firstItem="eaU-nU-CKL" firstAttribute="top" secondItem="jIv-Dk-bfC" secondAttribute="top" constant="64" id="nh0-Gn-c3U"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="buttonSave" destination="rJL-U1-Ehv" id="VfC-By-0LN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkN-vs-vAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Save" id="rJL-U1-Ehv">
+                    <connections>
+                        <action selector="touchButtonSave:" destination="z17-V8-0nI" id="B7Z-ZN-1mP"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="1513" y="452"/>
+        </scene>
+        <!--User Detail Edit Table View Controller-->
+        <scene sceneID="kmi-fo-eBq">
+            <objects>
+                <tableViewController storyboardIdentifier="userDetailEditTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UEf-xC-PiG" customClass="UserDetailEditTableViewController" customModule="vivira_health_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="194" sectionHeaderHeight="28" sectionFooterHeight="28" id="fOa-Hf-v2e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellPhotoTableViewCell" rowHeight="194" id="4qx-5d-pbI" customClass="CellPhotoTableViewCell" customModule="vivira_health_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="194"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qx-5d-pbI" id="B0o-ZN-2Mh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="194"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhD-3v-g5q">
+                                            <rect key="frame" x="70" y="7" width="180" height="180"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="180" id="Kgx-QI-iw8"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uhD-3v-g5q" firstAttribute="leading" secondItem="B0o-ZN-2Mh" secondAttribute="leading" constant="70" id="Cvs-cn-YWf"/>
+                                        <constraint firstAttribute="trailing" secondItem="uhD-3v-g5q" secondAttribute="trailing" constant="70" id="Nfe-PC-53E"/>
+                                        <constraint firstItem="uhD-3v-g5q" firstAttribute="top" secondItem="B0o-ZN-2Mh" secondAttribute="top" constant="7" id="sWw-zV-X7u"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photo" destination="uhD-3v-g5q" id="lH7-9x-EIk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellTextTableViewCell" rowHeight="194" id="F9z-Mv-bge" customClass="CellTextTableViewCell" customModule="vivira_health_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="222" width="320" height="194"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F9z-Mv-bge" id="1BT-mw-VbM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="194"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-qc-Axp">
+                                            <rect key="frame" x="15" y="33" width="290" height="128"/>
+                                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9t-KU-Ong">
+                                            <rect key="frame" x="15" y="8" width="258" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="9mh-JT-jM5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="P9t-KU-Ong" secondAttribute="trailing" constant="47" id="2An-Y2-vC5"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y0h-qc-Axp" secondAttribute="bottom" constant="33" id="CtV-LK-ANK"/>
+                                        <constraint firstItem="Y0h-qc-Axp" firstAttribute="leading" secondItem="1BT-mw-VbM" secondAttribute="leading" constant="15" id="GGT-e9-cgo"/>
+                                        <constraint firstItem="Y0h-qc-Axp" firstAttribute="top" secondItem="P9t-KU-Ong" secondAttribute="bottom" constant="9" id="GuR-lk-MwV"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y0h-qc-Axp" secondAttribute="trailing" constant="15" id="cx0-1P-iJe"/>
+                                        <constraint firstItem="P9t-KU-Ong" firstAttribute="top" secondItem="1BT-mw-VbM" secondAttribute="top" constant="9" id="dxb-VU-VtX"/>
+                                        <constraint firstItem="P9t-KU-Ong" firstAttribute="leading" secondItem="1BT-mw-VbM" secondAttribute="leading" constant="15" id="pcb-8W-89F"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelTitle" destination="P9t-KU-Ong" id="0yC-Bm-SDp"/>
+                                    <outlet property="textViewDesc" destination="Y0h-qc-Axp" id="kex-6d-uvg"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellInfoTableViewCell" rowHeight="44" id="9CG-Fs-fha" customClass="CellInfoTableViewCell" customModule="vivira_health_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9CG-Fs-fha" id="y2F-Aq-XHb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-Ln-8gx">
+                                            <rect key="frame" x="15" y="17" width="290" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="aWG-ae-Ngr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuy-s3-mHG">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="27h-Kn-a5e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zQ3-Ln-8gx" firstAttribute="leading" secondItem="y2F-Aq-XHb" secondAttribute="leading" constant="15" id="2Vi-rx-qPY"/>
+                                        <constraint firstItem="zQ3-Ln-8gx" firstAttribute="top" secondItem="Uuy-s3-mHG" secondAttribute="bottom" constant="2" id="JWe-S2-wNh"/>
+                                        <constraint firstItem="Uuy-s3-mHG" firstAttribute="leading" secondItem="y2F-Aq-XHb" secondAttribute="leading" constant="15" id="PWt-hJ-dgn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uuy-s3-mHG" secondAttribute="trailing" constant="15" id="gNm-GM-8hV"/>
+                                        <constraint firstAttribute="trailing" secondItem="zQ3-Ln-8gx" secondAttribute="trailing" constant="15" id="oV9-PN-Fa3"/>
+                                        <constraint firstItem="Uuy-s3-mHG" firstAttribute="top" secondItem="y2F-Aq-XHb" secondAttribute="top" id="r3x-PL-1OM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelTitle" destination="Uuy-s3-mHG" id="GY4-u7-Dd5"/>
+                                    <outlet property="textFiel" destination="zQ3-Ln-8gx" id="Whc-Uh-7BX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UEf-xC-PiG" id="RNz-9v-u9b"/>
+                            <outlet property="delegate" destination="UEf-xC-PiG" id="BU0-Y9-TdQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8P-6o-uxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="452"/>
+        </scene>
     </scenes>
 </document>

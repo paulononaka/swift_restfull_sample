@@ -22,6 +22,10 @@
 		816DE6621C4964C1004C3FE9 /* UtilColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6611C4964C1004C3FE9 /* UtilColors.swift */; };
 		816DE6641C496A69004C3FE9 /* UserDetailsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6631C496A69004C3FE9 /* UserDetailsUITests.swift */; };
 		816DE6681C496F2E004C3FE9 /* CreateUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6671C496F2E004C3FE9 /* CreateUserUITests.swift */; };
+		816DE66A1C497418004C3FE9 /* UserDetailEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6691C497418004C3FE9 /* UserDetailEditViewController.swift */; };
+		816DE66C1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66B1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift */; };
+		816DE66E1C497537004C3FE9 /* CellPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66D1C497537004C3FE9 /* CellPhotoTableViewCell.swift */; };
+		816DE6701C49782D004C3FE9 /* EditUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */; };
 		818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC74F1C4922BC00069BA2 /* RestClientTests.swift */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
@@ -83,6 +87,10 @@
 		816DE6611C4964C1004C3FE9 /* UtilColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilColors.swift; sourceTree = "<group>"; };
 		816DE6631C496A69004C3FE9 /* UserDetailsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsUITests.swift; sourceTree = "<group>"; };
 		816DE6671C496F2E004C3FE9 /* CreateUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserUITests.swift; sourceTree = "<group>"; };
+		816DE6691C497418004C3FE9 /* UserDetailEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailEditViewController.swift; sourceTree = "<group>"; };
+		816DE66B1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailEditTableViewController.swift; sourceTree = "<group>"; };
+		816DE66D1C497537004C3FE9 /* CellPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserUITests.swift; sourceTree = "<group>"; };
 		818AC74F1C4922BC00069BA2 /* RestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 		81B14CE01C490F7B003B0072 /* vivira_health_iosUITests */ = {
 			isa = PBXGroup;
 			children = (
+				816DE66F1C49782D004C3FE9 /* EditUserUITests.swift */,
 				816DE6671C496F2E004C3FE9 /* CreateUserUITests.swift */,
 				816DE6631C496A69004C3FE9 /* UserDetailsUITests.swift */,
 				81B14CE31C490F7B003B0072 /* Info.plist */,
@@ -235,6 +244,7 @@
 				81C5C3631C492C3C00621680 /* UserTableViewCell.swift */,
 				816DE6591C49602B004C3FE9 /* CellTextTableViewCell.swift */,
 				816DE65B1C496049004C3FE9 /* CellInfoTableViewCell.swift */,
+				816DE66D1C497537004C3FE9 /* CellPhotoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -279,6 +289,7 @@
 			children = (
 				81B14CF51C4911B4003B0072 /* ViewController.swift */,
 				816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */,
+				816DE6691C497418004C3FE9 /* UserDetailEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +315,7 @@
 			children = (
 				81C5C3611C492B8500621680 /* UsersTableViewController.swift */,
 				816DE6571C495FEB004C3FE9 /* UserAddTableViewController.swift */,
+				816DE66B1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -573,6 +585,7 @@
 				81B14CFE1C4912DB003B0072 /* User.swift in Sources */,
 				816DE6601C49649A004C3FE9 /* UtilButton.swift in Sources */,
 				81C5C35C1C49280D00621680 /* UIColor+Hex.swift in Sources */,
+				816DE66E1C497537004C3FE9 /* CellPhotoTableViewCell.swift in Sources */,
 				81C5C35A1C4927CD00621680 /* FactoryStoryboard.swift in Sources */,
 				816DE6581C495FEB004C3FE9 /* UserAddTableViewController.swift in Sources */,
 				816DE6621C4964C1004C3FE9 /* UtilColors.swift in Sources */,
@@ -581,7 +594,9 @@
 				81C5C3711C492E2B00621680 /* HTTPStub.swift in Sources */,
 				816DE6511C494738004C3FE9 /* UtilViewController.swift in Sources */,
 				816DE6561C4951BF004C3FE9 /* UserDetailViewController.swift in Sources */,
+				816DE66C1C4974AB004C3FE9 /* UserDetailEditTableViewController.swift in Sources */,
 				81B14D001C4912F9003B0072 /* ErrorDetail.swift in Sources */,
+				816DE66A1C497418004C3FE9 /* UserDetailEditViewController.swift in Sources */,
 				81B14CFC1C4912CF003B0072 /* TOUsersList.swift in Sources */,
 				81C5C3621C492B8500621680 /* UsersTableViewController.swift in Sources */,
 				816DE6501C494738004C3FE9 /* UtilNetwork.swift in Sources */,
@@ -605,6 +620,7 @@
 			files = (
 				81E52E1B1C4934610085C50D /* ListUsersUITests.swift in Sources */,
 				816DE6681C496F2E004C3FE9 /* CreateUserUITests.swift in Sources */,
+				816DE6701C49782D004C3FE9 /* EditUserUITests.swift in Sources */,
 				816DE6641C496A69004C3FE9 /* UserDetailsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

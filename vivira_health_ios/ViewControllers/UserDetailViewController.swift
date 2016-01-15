@@ -45,7 +45,9 @@ class UserDetailViewController: UIViewController {
     }
     
     @IBAction func touchButtonEdit(sender: AnyObject) {
-        
+        let screenDetail = FactoryStoryboard.storyboardHome().instantiateViewControllerWithIdentifier("userDetailEditViewController") as? UserDetailEditViewController
+        screenDetail?.user = user
+        self.navigationController?.pushViewController(screenDetail!, animated: true)
     }
     
     //MARK: - Activity Indicator

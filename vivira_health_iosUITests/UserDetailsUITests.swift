@@ -16,7 +16,9 @@ class UserDetailsUITests: XCTestCase {
     }
     
     func testShouldShowUserName() {
-        // When I select a user from the list
+        // Given I have a user Ronald Sanders
+        
+        // When I select this user from the list
         app.tables.staticTexts["Ronald Sanders"].tap()
         
         // Then I should see

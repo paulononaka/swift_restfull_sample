@@ -14,16 +14,15 @@ class RestClientTests: XCTestCase {
     }
     
     override func tearDown() {
-        OHHTTPStubs.removeAllStubs()
         super.tearDown()
     }
     
     func testGetUsersReceiveData() {
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
-        var receivedData: [User] = []
+        var receivedData: [User]? = []
         
         RestClient.getUsers() { result in
-            receivedData = result.result.value!.users
+            receivedData = result.result.value?.users
             responseArrived.fulfill()
         }
         
@@ -34,47 +33,47 @@ class RestClientTests: XCTestCase {
     
     func testGetUsersShouldReturn3Users() {
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
-        var receivedData: [User] = []
+        var receivedData: [User]? = []
         
         RestClient.getUsers() { result in
-            receivedData = result.result.value!.users
+            receivedData = result.result.value?.users
             responseArrived.fulfill()
         }
         
         self.waitForExpectationsWithTimeout(TIMEOUT) { err in
-            XCTAssertTrue(receivedData.count == 3, "Should return 3 users")
+            XCTAssertTrue(receivedData?.count == 3, "Should return 3 users. Found instead: \(receivedData?.count)")
         }
     }
     
     func testGetUserDetailShouldReturnTheUserPassedAsParameter() {
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
-        var receivedData: User = User()
+        var receivedData: User? = User()
         
         let userIdParam = 1
         
         RestClient.getUserDetail(userIdParam) { result in
-            receivedData = result.result.value!.user!
+            receivedData = result.result.value?.user
             responseArrived.fulfill()
         }
         
         self.waitForExpectationsWithTimeout(TIMEOUT) { err in
-            XCTAssertTrue(receivedData.id == userIdParam, "Should return data from the passed user")
+            XCTAssertTrue(receivedData?.id == userIdParam, "Should return data from the passed user")
         }
     }
     
     func testEditUserShouldReturnTheUserPassedAsParameter() {
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
-        var receivedData: User = User()
+        var receivedData: User? = User()
         
         let userParam = User(id: 1, name: "Paulo", photo_url: "http://goo.gl/GoUUrD", email: "paulononaka@gmail.com", description: "some nice guy")
         
         RestClient.putEditUser(userParam) { result in
-            receivedData = result.result.value!.user!
+            receivedData = result.result.value?.user
             responseArrived.fulfill()
         }
         
         self.waitForExpectationsWithTimeout(TIMEOUT) { err in
-            XCTAssertTrue(receivedData.id == userParam.id, "Should return data from the passed user")
+            XCTAssertTrue(receivedData?.id == userParam.id, "Should return data from the passed user")
         }
     }
     
@@ -96,17 +95,17 @@ class RestClientTests: XCTestCase {
     
     func testCreateUserShouldReturnTheUserPassedAsParameter() {
         let responseArrived = self.expectationWithDescription("response of async request has arrived")
-        var receivedData: User = User()
+        var receivedData: User? = User()
         
         let userParam = User(id: 1, name: "Paulo", photo_url: "http://goo.gl/GoUUrD", email: "paulononaka@gmail.com", description: "some nice guy")
         
         RestClient.postCreateUser(userParam) { result in
-            receivedData = result.result.value!.user!
+            receivedData = result.result.value?.user
             responseArrived.fulfill()
         }
         
         self.waitForExpectationsWithTimeout(TIMEOUT) { err in
-            XCTAssertTrue(receivedData.id == userParam.id, "Should return data from the passed user")
+            XCTAssertTrue(receivedData?.id == userParam.id, "Should return data from the passed user")
         }
     }
     
