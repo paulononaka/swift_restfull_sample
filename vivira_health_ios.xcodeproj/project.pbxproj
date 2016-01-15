@@ -13,6 +13,7 @@
 		816DE6501C494738004C3FE9 /* UtilNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE64E1C494738004C3FE9 /* UtilNetwork.swift */; };
 		816DE6511C494738004C3FE9 /* UtilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE64F1C494738004C3FE9 /* UtilViewController.swift */; };
 		816DE6541C494F2C004C3FE9 /* UsersTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6531C494F2C004C3FE9 /* UsersTableViewControllerTests.swift */; };
+		816DE6561C4951BF004C3FE9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */; };
 		818AC7501C4922BC00069BA2 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC74F1C4922BC00069BA2 /* RestClientTests.swift */; };
 		81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B14CC11C490F7B003B0072 /* AppDelegate.swift */; };
 		81B14CC71C490F7B003B0072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B14CC51C490F7B003B0072 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		816DE64E1C494738004C3FE9 /* UtilNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilNetwork.swift; sourceTree = "<group>"; };
 		816DE64F1C494738004C3FE9 /* UtilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilViewController.swift; sourceTree = "<group>"; };
 		816DE6531C494F2C004C3FE9 /* UsersTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewControllerTests.swift; sourceTree = "<group>"; };
+		816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		818AC74F1C4922BC00069BA2 /* RestClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		81B14CBE1C490F7B003B0072 /* vivira_health_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vivira_health_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B14CC11C490F7B003B0072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,14 +176,14 @@
 		81B14CC01C490F7B003B0072 /* vivira_health_ios */ = {
 			isa = PBXGroup;
 			children = (
-				81C5C36A1C492E2B00621680 /* Stubs */,
-				81C5C3601C492B6900621680 /* TableViews */,
 				81B14CC11C490F7B003B0072 /* AppDelegate.swift */,
 				81B14CC81C490F7B003B0072 /* Assets.xcassets */,
 				81B14CEF1C491174003B0072 /* Cells */,
 				81B14CCD1C490F7B003B0072 /* Info.plist */,
 				81B14CF01C491174003B0072 /* Models */,
 				81B14CF11C491174003B0072 /* StoryBoards */,
+				81C5C36A1C492E2B00621680 /* Stubs */,
+				81C5C3601C492B6900621680 /* TableViews */,
 				81B14CF21C491174003B0072 /* Utils */,
 				81B14CF31C491174003B0072 /* ViewControllers */,
 				81B14CF41C491174003B0072 /* WS */,
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				81B14CF51C4911B4003B0072 /* ViewController.swift */,
+				816DE6551C4951BF004C3FE9 /* UserDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				81B14CC21C490F7B003B0072 /* AppDelegate.swift in Sources */,
 				81C5C3711C492E2B00621680 /* HTTPStub.swift in Sources */,
 				816DE6511C494738004C3FE9 /* UtilViewController.swift in Sources */,
+				816DE6561C4951BF004C3FE9 /* UserDetailViewController.swift in Sources */,
 				81B14D001C4912F9003B0072 /* ErrorDetail.swift in Sources */,
 				81B14CFC1C4912CF003B0072 /* TOUsersList.swift in Sources */,
 				81C5C3621C492B8500621680 /* UsersTableViewController.swift in Sources */,
