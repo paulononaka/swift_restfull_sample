@@ -1,4 +1,9 @@
-# Vivira Health iOS interview test
+# A simple CRUD app sample that manager users through a REST API (JSON)
+
+## Requirements
+
+- iOS 8.2+
+- Xcode 7.2+
 
 ## Installation
 
@@ -30,10 +35,10 @@ $ pod install
 
 - Stubs:
 
-Because of how UI tests work, we cannot directly interact with the app at runtime, so any HTTP mocking or manipulation of things like NSUserDefaults in a XCUITestCase will not affect our app.
+To be able to mock HTTP requests in our app for UI tests, we had to launch environment variables before launching the app in the setUp() method of the XCUITestCases and then modify our app code to read the environment variables and to bootstrap OHHTTPStubs.
 
-To be able to mock HTTP or setup & teardown our apps environment for specific UI tests, we will need to set launch arguments or launch environment variables before launching the app in the setUp() method of a XCUITestCase and then modify our app code to read the launch arguments or environment variables and bootstrap the test environment
+This is due because of how UI tests work. In UI Test environment we cannot directly interact with the app at runtime, so any HTTP mocking or manipulation of things like NSUserDefaults in a XCUITestCase can not affect the app.
 
 - Running on simulator:
 
-Make sure 'Hardware -> Keyboard -> Connect hardware keyboard' is on.
+Make sure 'Hardware -> Keyboard -> Connect hardware keyboard' is off!

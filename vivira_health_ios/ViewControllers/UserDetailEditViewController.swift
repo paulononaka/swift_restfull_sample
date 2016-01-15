@@ -48,11 +48,9 @@ class UserDetailEditViewController: UIViewController, UserDetailEditTableViewCon
             utilViewController.showActivityIndicator("deleting user...")
             RestClient.deleteUser(user.id) { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure ||
-                    result.response?.statusCode < 200 ||
-                    result.response?.statusCode >= 300
+                if (result.response?.statusCode < 200 || result.response?.statusCode >= 300)
                 {
-                    self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
+                    self.utilViewController.showMessage(self, message: result.result.value!.error!.errorMessage())
                 } else {
                     self.utilViewController.showMessage(self, message: "User deleted with success!", okHandler: {
                         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -69,11 +67,9 @@ class UserDetailEditViewController: UIViewController, UserDetailEditTableViewCon
             utilViewController.showActivityIndicator("Update user...")
             RestClient.putEditUser(user) { result in
                 self.utilViewController.hideActivityIndicator()
-                if result.result.isFailure ||
-                    result.response?.statusCode < 200 ||
-                    result.response?.statusCode >= 300
+                if (result.response?.statusCode < 200 || result.response?.statusCode >= 300)
                 {
-                    self.utilViewController.showMessage(self, message: "An error occurred. Please try again :(")
+                    self.utilViewController.showMessage(self, message: result.result.value!.error!.errorMessage())
                 } else {
                     self.utilViewController.showMessage(self, message: "User edited with success!", okHandler: {
                         self.navigationController?.popToRootViewControllerAnimated(true)

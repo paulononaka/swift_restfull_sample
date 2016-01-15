@@ -41,13 +41,10 @@ class EditUserUITests: XCTestCase {
         let textField = tablesQuery.cells.containingType(.StaticText, identifier:"Name").childrenMatchingType(.TextField).element
         textField.tap()
         textField.typeText(" da Silva")
-        let returnButton = app.buttons["Return"]
-        returnButton.tap()
         
         let textField2 = tablesQuery.cells.containingType(.StaticText, identifier:"E-mail").childrenMatchingType(.TextField).element
         textField2.tap()
         textField2.typeText(".br")
-        returnButton.tap()
         
         let textView = tablesQuery.cells.containingType(.StaticText, identifier:"Description").childrenMatchingType(.TextView).element
         textView.tap()
