@@ -32,13 +32,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asg-yd-ert">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="f7g-bv-fMB" kind="embed" id="NpD-CG-8fP"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Asg-yd-ert" secondAttribute="bottom" id="Ahi-sM-jal"/>
+                            <constraint firstAttribute="trailing" secondItem="Asg-yd-ert" secondAttribute="trailing" id="WxE-ce-524"/>
+                            <constraint firstItem="Asg-yd-ert" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aZv-eQ-DyW"/>
+                            <constraint firstItem="Asg-yd-ert" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z8H-lD-LyR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bAH-sa-tmw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301.33333333333331" y="452.0333333333333"/>
+            <point key="canvasLocation" x="283" y="452"/>
+        </scene>
+        <!--Users Table View Controller-->
+        <scene sceneID="6td-9W-Pbr">
+            <objects>
+                <tableViewController storyboardIdentifier="usersTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f7g-bv-fMB" customClass="UsersTableViewController" customModule="vivira_health_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2do-QC-htZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="userTableViewCell" id="EZO-wX-wkz" customClass="UserTableViewCell" customModule="vivira_health_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EZO-wX-wkz" id="3Hy-hG-rRK">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-BP-6Um">
+                                            <rect key="frame" x="15" y="11" width="275" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="3gg-BP-6Um" id="wmD-rP-0ps"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f7g-bv-fMB" id="VRr-s6-0Cq"/>
+                            <outlet property="delegate" destination="f7g-bv-fMB" id="z9d-6v-Yyb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="943-Ad-PiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715" y="452"/>
         </scene>
     </scenes>
 </document>

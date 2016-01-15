@@ -1,0 +1,16 @@
+{
+   "users":[
+      {
+         "name":"Ronald Sanders",
+         "id":1
+      },
+      {
+         "name":"Michael Tieló",
+         "id":2
+      },
+      {
+         "name":"David",
+         "id":3
+      }
+   ]
+}
