@@ -1,13 +1,17 @@
+machine:
+  xcode:
+    version: 7.2
 test:
   override:
     - xctool
-      -workspace 'vivira_health_ios.xcworkspace'
-      -scheme 'vivira_health_ios' 
-      build build-tests run-tests 
-      -reporter plain -reporter plain:$CIRCLE_ARTIFACTS/xctool.log 
+      -reporter pretty
       -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml 
-      -sdk iphonesimulator 
-      -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4' 
+      -reporter plain -reporter plain:$CIRCLE_ARTIFACTS/xctool.log 
       CODE_SIGNING_REQUIRED=NO 
       CODE_SIGN_IDENTITY= 
       PROVISIONING_PROFILE=
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4' 
+      -sdk iphonesimulator 
+      -scheme 'vivira_health_ios' 
+      -workspace 'vivira_health_ios.xcworkspace'
+      build build-tests run-tests 
