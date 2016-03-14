@@ -7,7 +7,7 @@ test:
       -reporter plain -reporter plain:$CIRCLE_ARTIFACTS/xctool.log 
       -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml 
       -sdk iphonesimulator 
-      -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' 
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4' 
       CODE_SIGNING_REQUIRED=NO 
       CODE_SIGN_IDENTITY= 
       PROVISIONING_PROFILE=
