@@ -3,10 +3,11 @@ machine:
     version: 7.2
 test:
   override:
-    - xcodebuild 
-      -sdk iphonesimulator 
-      -workspace vivira_health_ios.xcworkspace 
-      -scheme vivira_health_ios 
-      -configuration Debug 
-      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO 
+    - xcodebuild
+      -sdk iphonesimulator
+      -workspace vivira_health_ios.xcworkspace
+      -scheme vivira_health_ios
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0'
+      -configuration Debug
+      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
       clean build test
