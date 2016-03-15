@@ -7,7 +7,7 @@ test:
       -sdk iphonesimulator
       -workspace vivira_health_ios.xcworkspace
       -scheme vivira_health_ios
-      -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0'
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2'
       -configuration Debug
       RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
       clean build test
