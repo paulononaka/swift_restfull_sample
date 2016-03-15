@@ -10,4 +10,7 @@ test:
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2'
       -configuration Debug
       RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
-      clean build test
+      clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+      && exit ${PIPESTATUS[0]}
