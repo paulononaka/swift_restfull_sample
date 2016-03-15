@@ -3,15 +3,14 @@ machine:
     version: 7.2
 test:
   override:
-    - xctool
-      -reporter pretty
-      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml 
-      -reporter plain -reporter plain:$CIRCLE_ARTIFACTS/xctool.log 
-      CODE_SIGNING_REQUIRED=NO 
-      CODE_SIGN_IDENTITY= 
-      PROVISIONING_PROFILE=
-      -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' 
-      -sdk iphonesimulator 
-      -scheme 'vivira_health_ios' 
-      -workspace 'vivira_health_ios.xcworkspace'
-      build build-tests run-tests 
+    - set -o pipefail &&
+      xcodebuild
+        CODE_SIGNING_REQUIRED=NO
+        CODE_SIGN_IDENTITY=
+        PROVISIONING_PROFILE=
+        -sdk iphonesimulator
+        -destination 'platform=iOS Simulator,OS=8.1,name=iPhone 6'
+        -scheme "Loot"
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
