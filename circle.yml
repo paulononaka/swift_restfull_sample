@@ -2,7 +2,7 @@ machine:
   xcode:
     version: 7.2
   environment:
-    GYM_CODE_SIGNING_IDENTITY: "xiPhone Distribution: WIRELESS TELECOM PROCESSAMENTO DE DADOS LTDA (6D84833G2A)"
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Distribution: WIRELESS TELECOM PROCESSAMENTO DE DADOS LTDA (6D84833G2A)"
 test:
   override:
     - xcodebuild
