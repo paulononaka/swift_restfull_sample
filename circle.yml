@@ -11,11 +11,11 @@ test:
       -configuration Debug
       RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
       clean build test |
-      tee $CIRCLE_ARTIFACTS/xcode_raw.log |   # saves original log
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
       xcpretty --color
       --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
       --report html --output $CIRCLE_TEST_REPORTS/xcode/results.html
-      && exit ${PIPESTATUS[0]}                # required by xcpretty
+      && exit ${PIPESTATUS[0]}
 deployment:
   beta_distribution:
     branch: master
@@ -25,5 +25,5 @@ deployment:
         --scheme vivira_health_ios
         --workspace vivira_health_ios.xcworkspace
       - ipa distribute:testfairy
-          --key     "$TESTFAIRY_API_KEY"
-          --comment "CircleCI build $CIRCLE_BUILD_URL"
+        --key     "$TESTFAIRY_API_KEY"
+        --comment "CircleCI build $CIRCLE_BUILD_URL"
