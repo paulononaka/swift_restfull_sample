@@ -29,4 +29,3 @@ deployment:
         --use_legacy_build_api
         --scheme vivira_health_ios
         --workspace vivira_health_ios.xcworkspace
-      - pilot upload
