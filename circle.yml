@@ -12,8 +12,7 @@ test:
       CODE_SIGNING_REQUIRED=NO                # no need to do code signing at this point
       CODE_SIGN_IDENTITY=                     # as it will be done in the deployment step
       PROVISIONING_PROFILE=
-      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES
-      ONLY_ACTIVE_ARCH=NO
+      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
       clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |   # saves original log
       xcpretty --color
@@ -24,7 +23,8 @@ deployment:
   beta_distribution:
     branch: master
     commands:
-      - gym 
+      - gym
+        --use_legacy_build_api 
         --scheme vivira_health_ios
         --workspace vivira_health_ios.xcworkspace
       - ipa distribute:testfairy
