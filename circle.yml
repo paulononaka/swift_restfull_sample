@@ -9,18 +9,24 @@ test:
       -scheme vivira_health_ios
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2'
       -configuration Debug
-      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
+      CODE_SIGNING_REQUIRED=NO                # no need to do code signing at this point
+      CODE_SIGN_IDENTITY=                     # as it will be done in the deployment step
+      PROVISIONING_PROFILE=
+      RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES
+      ONLY_ACTIVE_ARCH=NO
       clean build test |
-      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |   # saves original log
       xcpretty --color
       --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
       --report html --output $CIRCLE_TEST_REPORTS/xcode/results.html
-      && exit ${PIPESTATUS[0]}
+      && exit ${PIPESTATUS[0]}                # required by xcpretty
 deployment:
   beta_distribution:
     branch: master
     commands:
-      - gym
+      - gym 
+        --scheme vivira_health_ios
+        --workspace vivira_health_ios.xcworkspace
       - ipa distribute:testfairy
           --key     "$TESTFAIRY_API_KEY"
           --comment "CircleCI build $CIRCLE_BUILD_URL"
