@@ -12,5 +12,15 @@ test:
       RUN_APPLICATION_TESTS_WITH_IOS_SIM=YES ONLY_ACTIVE_ARCH=NO
       clean build test |
       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+      xcpretty --color
+      --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+      --report html --output $CIRCLE_TEST_REPORTS/xcode/results.html
       && exit ${PIPESTATUS[0]}
+deployment:
+  beta_distribution:
+    branch: master
+    commands:
+      - gym
+      - ipa distribute:testfairy
+          --key     "$TESTFAIRY_API_KEY"
+          --comment "CircleCI build $CIRCLE_BUILD_URL"
