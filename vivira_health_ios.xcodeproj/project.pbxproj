@@ -418,7 +418,7 @@
 				TargetAttributes = {
 					81B14CBD1C490F7B003B0072 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = LBB96EETEH;
+						DevelopmentTeam = 6D84833G2A;
 					};
 					81B14CD11C490F7B003B0072 = {
 						CreatedOnToolsVersion = 7.2;
@@ -753,10 +753,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = vivira_health_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-spike";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -766,10 +768,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = vivira_health_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-health-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devsup.vivira-spike";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
