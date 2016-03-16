@@ -1,4 +1,4 @@
-platform :ios, '9.1'
+platform :ios, '9.2'
 use_frameworks!
 
 target 'vivira_health_ios' do
